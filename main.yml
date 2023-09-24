@@ -1,0 +1,26 @@
+name: Streamlit App CI/CD
+
+on:
+  push:
+    branches:
+      - main # 触发主分支的推送
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9 # 根据您的需求选择适当的 Python 版本
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run Streamlit App
+      run: streamlit run demo.py # 替换为您的 Streamlit App 文件的名称
