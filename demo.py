@@ -1,5 +1,5 @@
 import streamlit as st
-import wikipedia
+from wikipedia import wikipedia
 from langchain.agents import load_tools, AgentType
 from langchain.agents import initialize_agent
 from langchain.chat_models import ChatOpenAI
