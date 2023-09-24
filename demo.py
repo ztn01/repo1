@@ -1,5 +1,4 @@
 import streamlit as st
-from wikipedia import wikipedia
 from langchain.agents import load_tools, AgentType
 from langchain.agents import initialize_agent
 from langchain.chat_models import ChatOpenAI
@@ -58,9 +57,9 @@ def keywords_e(question):
 
 # Streamlit界面布局和逻辑
 def main():
-    os.environ["SERPER_API_KEY"] = "c261f1dd74efb2db8801fb093d6f03c753ccd9ca"
+    os.environ["SERPER_API_KEY"] = "your google serper api key"
     serper_api_key = os.environ["SERPER_API_KEY"]
-    os.environ["OPENAI_API_KEY"] = "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"
+    os.environ["OPENAI_API_KEY"] = "your openai api key"
     openai_api_key = os.environ["OPENAI_API_KEY"]
     st.title("Search GPT")
     llm = OpenAI(model_name="gpt-3.5-turbo")
